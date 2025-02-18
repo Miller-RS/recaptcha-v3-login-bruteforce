@@ -53,7 +53,7 @@ Before running these scripts, ensure you have the following installed:
     await page.goto('YOUR_TARGET_URL'); // Replace 'YOUR_TARGET_URL'
     ```
 
-4.  **reCAPTCHA Site Key:** In `nodeToRecaptcha.js`, replace `'6LfnkXYiAAAAAO2v5wKACcHdcZyJjtopTvIHJM1D'` with the actual reCAPTCHA site key from the target website's login page. Inspect the HTML source of the login page to find the `sitekey` within the reCAPTCHA widget's parameters.
+4.  **reCAPTCHA Site Key:** In `nodeToRecaptcha.js`, replace `'YOUR_RECAPTCHA_SITE_KEY'` with the actual reCAPTCHA site key from the target website's login page. Inspect the HTML source of the login page to find the `sitekey` within the reCAPTCHA widget's parameters.
 
     ```javascript
     grecaptcha.ready(function () {
@@ -65,11 +65,11 @@ Before running these scripts, ensure you have the following installed:
 
 5.  **Form Input Names and Values:**
     *   Inspect the HTML source of the login page to identify the names of the input fields for:
-        *   Username/Code (`codUni` in the example)
-        *   Password (`clave` in the example)
-        *   CSRF Token (`_token` in the example)
-        *   reCAPTCHA Response (`recaptcha_response` in the example - this is usually hidden and populated by JavaScript)
-        *   Form submission type (`tipo` in the example)
+        *   Username/Code
+        *   Password 
+        *   CSRF Token (`_token`)
+        *   reCAPTCHA Response (`recaptcha_response` this is usually hidden and populated by JavaScript)
+        *   Form submission type (`tipo`)
 
     *   Update the `form_data` dictionary in `main.py` with the correct input names and any static values (like `tipo: 'acceso'`).
 
@@ -77,7 +77,7 @@ Before running these scripts, ensure you have the following installed:
     form_data = {
         'tipo': 'YOUR_TIPO_INPUT_NAME', # Replace 'YOUR_TIPO_INPUT_NAME' if different
         '_token': token_value,
-        'codUni': 'YOUR_USERNAME', # Replace 'YOUR_USERNAME' with your actual username input field name if different
+        'user': 'YOUR_USERNAME', # Replace 'YOUR_USERNAME' with your actual username input field name if different
         'clave': password,
         'recaptcha_response': recaptcha_value
     }
