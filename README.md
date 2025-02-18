@@ -82,3 +82,10 @@ Before running these scripts, ensure you have the following installed:
         'recaptcha_response': recaptcha_value
     }
     ```
+## Running the Scripts
+
+1.  **Run `main.py`:** Execute the Python script from your terminal.
+
+    ```bash
+    python main.py
+    ```
